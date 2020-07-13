@@ -1,5 +1,10 @@
 <ul class="list-group">
-  <li routerLink="/products/category/{{category.id}}" *ngFor="let category of categories" class="list-group-item">
+  <li
+    (click)="selectCategory(category)"
+    routerLink="/products/category/{{ category.id }}"
+    *ngFor="let category of categories"
+    [class]="getCurrentCategoryClass(category)"
+  >
     {{ category.categoryName }}
   </li>
 </ul>

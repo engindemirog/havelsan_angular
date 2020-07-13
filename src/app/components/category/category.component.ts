@@ -13,6 +13,9 @@ export class CategoryComponent implements OnInit {
     {id:1, categoryName:"Bilgisayar"},
     {id:2, categoryName:"Elektronik"}
   ];
+
+  currentCategory :Category;
+
   constructor(private categoryService:CategoryService) { }
 
   ngOnInit(): void {
@@ -23,6 +26,19 @@ export class CategoryComponent implements OnInit {
     this.categoryService.getCategories().subscribe((data) => {
       this.categories = data;
     });
+  }
+
+  selectCategory(category){
+    this.currentCategory = category;
+  }
+
+  getCurrentCategoryClass(category:Category){
+    console.log(category.categoryName);
+    if(category == this.currentCategory){
+      return "list-group-item active"
+    }else{
+      return "list-group-item"
+    }
   }
 
 }
