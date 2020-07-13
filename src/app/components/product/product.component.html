@@ -1,0 +1,11 @@
+<div *ngIf="isLoading==true">LOADINGGGGGGGGG</div>
+
+<table *ngIf="isLoading==false" class="table">
+<tr *ngFor="let product of products">
+   <td>{{product.id}}</td>
+   <td>{{product.productName}}</td>
+   <td>{{product.unitPrice}}</td>
+   <td>{{product.quantityPerUnit}}</td>
+   <td>{{product.unitsInStock}}</td>
+</tr>
+</table>
