@@ -14,6 +14,7 @@ import { ProductFilterPipe } from './pipes/product-filter.pipe';
 import { WordComponent } from './components/word/word.component';
 import { GlobalizationPipe } from './pipes/globalization.pipe';
 import { ProductComponent } from './components/product/product.component';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductComponent } from './components/product/product.component';
     ProductFilterPipe,
     WordComponent,
     GlobalizationPipe,
-    ProductComponent
+    ProductComponent,
+    CartSummaryComponent
   ],
   imports: [
     BrowserModule,
