@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductComponent implements OnInit {
   products: Product[];
   isLoading: boolean = true;
-
+  filterText:string="irem";
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute

@@ -1,11 +1,24 @@
-<div *ngIf="isLoading==true">LOADINGGGGGGGGG</div>
+<div *ngIf="isLoading == true">LOADINGGGGGGGGG</div>
 
-<table *ngIf="isLoading==false" class="table">
-<tr *ngFor="let product of products">
-   <td>{{product.id}}</td>
-   <td>{{product.productName}}</td>
-   <td>{{product.unitPrice}}</td>
-   <td>{{product.quantityPerUnit}}</td>
-   <td>{{product.unitsInStock}}</td>
-</tr>
+<div class="form-group">
+  <input
+    type="text"
+    class="form-control"
+    id="filterText"
+    [(ngModel)]="filterText"
+  />
+</div>
+<div *ngIf="filterText" class="alert alert-primary" role="alert">
+  {{filterText}} aradınız.
+</div>
+
+<table *ngIf="isLoading == false" class="table">
+  <tr *ngFor="let product of products | productFilter: filterText">
+    <td>{{ product.id }}</td>
+    <td>{{ product.productName }}</td>
+    <td>{{ product.unitPrice | currency: "USD":true }}</td>
+    <td>{{ product.unitPrice | vat: 10 | currency: "USD":true }}</td>
+    <td>{{ product.quantityPerUnit }}</td>
+    <td>{{ product.unitsInStock }}</td>
+  </tr>
 </table>
