@@ -10,6 +10,8 @@ import { CategoryComponent } from './components/category/category.component';
 import { NavComponent } from './components/nav/nav.component';
 import { VatPipe } from './pipes/vat.pipe';
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
+import { WordComponent } from './components/word/word.component';
+import { GlobalizationPipe } from './pipes/globalization.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ProductFilterPipe } from './pipes/product-filter.pipe';
     CategoryComponent,
     NavComponent,
     VatPipe,
-    ProductFilterPipe
+    ProductFilterPipe,
+    WordComponent,
+    GlobalizationPipe
   ],
   imports: [
     BrowserModule,
