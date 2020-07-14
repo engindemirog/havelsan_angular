@@ -20,5 +20,6 @@
     <td>{{ product.unitPrice | vat: 10 | currency: "USD":true }}</td>
     <td>{{ product.quantityPerUnit }}</td>
     <td>{{ product.unitsInStock }}</td>
+    <td><button (click)="addToCart(product)" class="btn btn-success">Sepete ekle</button></td>
   </tr>
 </table>

@@ -1,3 +1,5 @@
+import { CartService } from './../../services/cart.service';
+import { CategoryService } from './../../services/category.service';
 import { ProductService } from './../../services/product.service';
 import { Product } from './../../models/product';
 import { Component, OnInit } from '@angular/core';
@@ -6,15 +8,16 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css'],
+  styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
   products: Product[];
   isLoading: boolean = true;
-  filterText:string="irem";
+  filterText:string="";
   constructor(
     private productService: ProductService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private cartService:CartService
   ) {}
 
   ngOnInit(): void {
@@ -39,5 +42,10 @@ export class ProductComponent implements OnInit {
       this.products = data;
       this.isLoading = false;
     });
+  }
+
+  addToCart(product:Product){
+     this.cartService.addToCart(product);
+     console.log(this.cartService.list().length);
   }
 }
