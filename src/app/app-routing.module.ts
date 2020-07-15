@@ -3,6 +3,7 @@ import { WordComponent } from './components/word/word.component';
 import { ProductComponent } from './components/product/product.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CartCompleteComponent } from './components/cart-complete/cart-complete.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:"products/category/:categoryid",component:ProductComponent},
   {path:"words",component:WordComponent},
   {path:"cartdetail",component:CartDetailComponent},
+  {path:"cartcomplete",component:CartCompleteComponent},
 ];
 
 @NgModule({

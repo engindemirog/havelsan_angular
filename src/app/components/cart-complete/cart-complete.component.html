@@ -1,0 +1,71 @@
+<form [formGroup]="cartCompleteForm" (ngSubmit)="complete()">
+  <div class="form-group">
+    <input
+      type="text"
+      id="firstName"
+      formControlName="firstName"
+      class="form-control"
+      placeholder="Adınız"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="
+        controls.firstName.hasError('required') && controls.firstName.dirty
+      "
+    >
+      Adınız zorunludur
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      id="lastName"
+      formControlName="lastName"
+      class="form-control"
+      placeholder="Soyadınız"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="controls.lastName.hasError('required') && controls.lastName.dirty"
+    >
+      Soyadınız zorunludur
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      id="address"
+      formControlName="address"
+      class="form-control"
+      placeholder="address"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="controls.address.hasError('required') && controls.address.dirty"
+    >
+      Adres zorunludur
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      class="form-control"
+      placeholder="email"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="controls.email.hasError('required') && controls.email.dirty"
+    >
+      Email zorunludur
+    </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="controls.email.hasError('email') && controls.email.dirty"
+    >
+      Email formatı uygun değil örnek : engin@engin.com
+    </div>
+  </div>
+  <button type="submit" class="btn btn-xs btn-warning">Ödemeye geç</button>
+</form>
