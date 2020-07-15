@@ -1,3 +1,4 @@
+import { NotificationService } from './../../services/notification.service';
 import { CartService } from './../../services/cart.service';
 import { CategoryService } from './../../services/category.service';
 import { ProductService } from './../../services/product.service';
@@ -17,7 +18,8 @@ export class ProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-    private cartService:CartService
+    private cartService:CartService,
+    private notificationService:NotificationService
   ) {}
 
   ngOnInit(): void {
@@ -46,6 +48,6 @@ export class ProductComponent implements OnInit {
 
   addToCart(product:Product){
      this.cartService.addToCart(product);
-     console.log(this.cartService.list().length);
+     this.notificationService.success(product.productName + " sepete eklendi");
   }
 }
