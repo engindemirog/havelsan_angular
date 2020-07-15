@@ -4,10 +4,10 @@
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
       <a class="dropdown-item" *ngFor="let cartItem of cartItems">
-          {{cartItem.product.productName}}<span class="badge badge-light">{{cartItem.quantity}}{{cartItem.getCartItemTotal}}</span>
+        <span (click)="removeFromCart(cartItem.product)" class="badge badge-danger">X</span>{{cartItem.product.productName}}<span class="badge badge-light">{{cartItem.quantity}}{{cartItem.getCartItemTotal}}</span>
       </a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item">Sepete git</a>
+      <a routerLink="/cartdetail" class="dropdown-item">Sepete git</a>
     </div>
   </li>
 

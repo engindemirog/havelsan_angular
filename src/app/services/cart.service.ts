@@ -23,6 +23,12 @@ export class CartService {
     }
   }
 
+  removeFromCart(product:Product){
+     let itemToRemove = CartItems.find(c=>c.product.id === product.id);
+
+     CartItems.splice(CartItems.indexOf(itemToRemove),1);
+  }
+
   list():CartItem[]{
     return CartItems;
   }

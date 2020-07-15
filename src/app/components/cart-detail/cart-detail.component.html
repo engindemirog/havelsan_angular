@@ -1,0 +1,12 @@
+
+<div *ngIf="cartItems.length==0" class="alert alert-danger" role="alert">
+    Sepette ürün yok!
+  </div>
+<table *ngIf="cartItems.length>0" class="table">
+  <tr *ngFor="let cartItem of cartItems">
+      <td>{{cartItem.product.productName}}</td>
+      <td>{{cartItem.quantity}}</td>
+      <td>{{cartItem.product.unitPrice * cartItem.quantity}}</td>
+      <td><button (click)="removeFromCart(cartItem.product)" class="btn btn-xs btn-danger">Sepetten sil</button></td>
+  </tr>
+</table>

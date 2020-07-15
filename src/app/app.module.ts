@@ -15,6 +15,7 @@ import { WordComponent } from './components/word/word.component';
 import { GlobalizationPipe } from './pipes/globalization.pipe';
 import { ProductComponent } from './components/product/product.component';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     WordComponent,
     GlobalizationPipe,
     ProductComponent,
-    CartSummaryComponent
+    CartSummaryComponent,
+    CartDetailComponent
   ],
   imports: [
     BrowserModule,

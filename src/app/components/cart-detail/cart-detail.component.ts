@@ -1,20 +1,20 @@
 import { NotificationService } from './../../services/notification.service';
-import { Product } from './../../models/product';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { CartItem } from 'src/app/models/cart-item';
+import { Product } from 'src/app/models/product';
 
 @Component({
-  selector: 'app-cart-summary',
-  templateUrl: './cart-summary.component.html',
-  styleUrls: ['./cart-summary.component.css']
+  selector: 'app-cart-detail',
+  templateUrl: './cart-detail.component.html',
+  styleUrls: ['./cart-detail.component.css']
 })
-export class CartSummaryComponent implements OnInit {
+export class CartDetailComponent implements OnInit {
 
-  cartItems:CartItem[];
   constructor(private cartService:CartService, 
     private notificationService:NotificationService) { }
 
+  cartItems:CartItem[];
   ngOnInit(): void {
     this.getCart();
   }
