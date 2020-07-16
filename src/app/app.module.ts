@@ -21,6 +21,8 @@ import { CartCompleteComponent } from './components/cart-complete/cart-complete.
 import { LoginComponent } from './components/login/login.component';
 import { BaseComponent } from './components/base/base.component';
 import { SaveButtonDirective } from './directives/save-button.directive';
+import { TableOrderDirective } from './directives/table-order.directive';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { SaveButtonDirective } from './directives/save-button.directive';
     CartDetailComponent,
     CartCompleteComponent,
     LoginComponent,
-    SaveButtonDirective
+    SaveButtonDirective,
+    TableOrderDirective,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

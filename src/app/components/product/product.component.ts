@@ -19,6 +19,7 @@ export class ProductComponent implements OnInit {
   isLoading: boolean = true;
   filterText:string="";
   product:Product2;
+  selectedProduct:Product2;
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
@@ -61,5 +62,9 @@ export class ProductComponent implements OnInit {
   addToCart(product:Product){
      this.cartService.addToCart(product);
      this.notificationService.success(product.productName + " sepete eklendi");
+  }
+
+  setCurrentProduct(product:Product2){
+    this.selectedProduct = product;
   }
 }
