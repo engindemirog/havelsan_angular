@@ -1,3 +1,4 @@
+
 import { Product } from './../models/product';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -20,5 +21,9 @@ export class ProductService {
     let newPath =this.path;
     newPath = newPath + "?categoryId="+categoryId;
     return this.httpClient.get<Product[]>(newPath);
+  }
+
+  add(product:Product){
+    return this.httpClient.post<Product>(this.path,product);
   }
 }

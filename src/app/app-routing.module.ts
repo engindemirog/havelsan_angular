@@ -1,3 +1,5 @@
+import { LoginComponent } from './components/login/login.component';
+import { LoginGuard } from './guards/login.guard';
 import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
 import { WordComponent } from './components/word/word.component';
 import { ProductComponent } from './components/product/product.component';
@@ -12,7 +14,8 @@ const routes: Routes = [
   {path:"products/category/:categoryid",component:ProductComponent},
   {path:"words",component:WordComponent},
   {path:"cartdetail",component:CartDetailComponent},
-  {path:"cartcomplete",component:CartCompleteComponent},
+  {path:"cartcomplete",component:CartCompleteComponent, canActivate:[LoginGuard]},
+  {path:"login",component:LoginComponent},
 ];
 
 @NgModule({

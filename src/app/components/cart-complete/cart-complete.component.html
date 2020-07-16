@@ -10,7 +10,7 @@
     <div
       class="alert alert-danger"
       *ngIf="
-        controls.firstName.hasError('required') && controls.firstName.dirty
+        controls.firstName.hasError('required') && controls.firstName.untouched
       "
     >
       Adınız zorunludur

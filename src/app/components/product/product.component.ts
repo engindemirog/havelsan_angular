@@ -1,3 +1,4 @@
+
 import { NotificationService } from './../../services/notification.service';
 import { CartService } from './../../services/cart.service';
 import { CategoryService } from './../../services/category.service';
@@ -15,6 +16,7 @@ export class ProductComponent implements OnInit {
   products: Product[];
   isLoading: boolean = true;
   filterText:string="";
+  product:Product;
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
@@ -30,6 +32,14 @@ export class ProductComponent implements OnInit {
         this.getProducts();
       }
     });
+  }
+
+  add(){
+    // if(this.productAddform.valid){
+    //   this.productService.add(this.product).subscribe(data=>{
+    //     this.notificationService.success("eklendi");
+    //   })
+    // }
   }
 
   getProducts() {
