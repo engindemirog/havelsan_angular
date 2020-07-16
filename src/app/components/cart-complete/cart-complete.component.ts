@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-cart-complete',
   templateUrl: './cart-complete.component.html',
   styleUrls: ['./cart-complete.component.css']
 })
-export class CartCompleteComponent implements OnInit {
+export class CartCompleteComponent extends BaseComponent implements OnInit {
 
   cartCompleteForm : FormGroup;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder) {
+    super()
+   }
 
   ngOnInit(): void {
     this.createCartCompleteForm();

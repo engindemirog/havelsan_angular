@@ -1,8 +1,9 @@
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { CategoryService } from './services/category.service';
 import { AdminModule } from './modules/admin/admin.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,8 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
 import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
 import { CartCompleteComponent } from './components/cart-complete/cart-complete.component';
 import { LoginComponent } from './components/login/login.component';
+import { BaseComponent } from './components/base/base.component';
+import { SaveButtonDirective } from './directives/save-button.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { LoginComponent } from './components/login/login.component';
     CartSummaryComponent,
     CartDetailComponent,
     CartCompleteComponent,
-    LoginComponent
+    LoginComponent,
+    SaveButtonDirective
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ import { LoginComponent } from './components/login/login.component';
     AdminModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

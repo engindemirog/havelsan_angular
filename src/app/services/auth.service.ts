@@ -1,19 +1,21 @@
+import { TokenModel } from './../models/token-model';
+import { User } from './../models/user';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
+  path = "https://localhost:44335/api/auth/login";
   login(user:User){
-      if(user.userName==="engin" && user.password==="12345"){
+      
+      return this.httpClient.post<TokenModel>(this.path,user);
         
-        localStorage.setItem("token","gdfgsdfgsdfgsdfgfdg");
-        return true;
-      }
+      
   }
 
   isAuthenticated(){

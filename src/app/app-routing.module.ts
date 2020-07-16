@@ -1,3 +1,4 @@
+import { PageCompletedGuard } from './guards/page-completed.guard';
 import { LoginComponent } from './components/login/login.component';
 import { LoginGuard } from './guards/login.guard';
 import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
   {path:"products/category/:categoryid",component:ProductComponent},
   {path:"words",component:WordComponent},
   {path:"cartdetail",component:CartDetailComponent},
-  {path:"cartcomplete",component:CartCompleteComponent, canActivate:[LoginGuard]},
+  {path:"cartcomplete",component:CartCompleteComponent, canActivate:[LoginGuard], canDeactivate:[PageCompletedGuard]},
   {path:"login",component:LoginComponent},
 ];
 

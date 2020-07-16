@@ -12,7 +12,16 @@
   {{filterText}} aradınız.
 </div>
 
-<table *ngIf="isLoading == false" class="table">
+<table hvlng  *ngIf="isLoading == false" class="table">
+  <tr>
+    <td>Sırala</td>
+    <td>Sırala</td>
+    <td>Sırala</td>
+    <td>Sırala</td>
+    <td>Sırala</td>
+    <td>Sırala</td>
+    <td>Sırala</td>
+  </tr>
   <tr *ngFor="let product of products | productFilter: filterText">
     <td>{{ product.id }}</td>
     <td>{{ product.productName }}</td>
@@ -22,4 +31,7 @@
     <td>{{ product.unitsInStock }}</td>
     <td><button (click)="addToCart(product)" class="btn btn-success">Sepete ekle</button></td>
   </tr>
+  
 </table>
+
+<h3>Sadece ilk 50 ürün listelendi</h3>

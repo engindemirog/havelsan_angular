@@ -1,3 +1,4 @@
+import { Product2 } from './../models/product copy';
 
 import { Product } from './../models/product';
 import { Injectable } from '@angular/core';
@@ -13,17 +14,17 @@ export class ProductService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getProducts():Observable<Product[]>{
-    return this.httpClient.get<Product[]>(this.path);
+  getProducts():Observable<Product2[]>{
+    return this.httpClient.get<Product2[]>("https://localhost:44335/api/products/getall");
   }
 
   getProductsByCategory(categoryId:number){
     let newPath =this.path;
     newPath = newPath + "?categoryId="+categoryId;
-    return this.httpClient.get<Product[]>(newPath);
+    return this.httpClient.get<Product2[]>(newPath);
   }
 
   add(product:Product){
-    return this.httpClient.post<Product>(this.path,product);
+    return this.httpClient.post<Product2>(this.path,product);
   }
 }
